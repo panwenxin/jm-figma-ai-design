@@ -159,6 +159,11 @@ function App() {
   const handleUserOrderChange = (event) => {
     setUserOrder(event.target.value);
   };
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      onSend();
+    }
+  };
 
   React.useEffect(() => {
     // This is how we read messages sent from the plugin controller
@@ -195,6 +200,7 @@ function App() {
           placeholder="请输入指令，点击右侧按钮发送"
           value={userOrder}
           onChange={handleUserOrderChange}
+          onKeyDown={handleKeyDown}
         ></textarea>
         <button onClick={onSend}>
           <img

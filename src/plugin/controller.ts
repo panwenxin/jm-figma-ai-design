@@ -70,7 +70,6 @@ figma.ui.onmessage = (msg) => {
 
         // 切换生成出来的页面横坐标
         const page = figma.currentPage;
-
         if (page.children.length > 1) {
           let lastChild = page.children.length - 2;
           frame.x = page.children[lastChild].x + page.children[lastChild].width + 40;
